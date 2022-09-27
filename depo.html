@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Attendance Dashboard | By Code Info</title>
+<style>
+
+
+
+    /*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+*{
+  
+}
+body{margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: rgb(4, 0, 255);
+ 
+}
+
+nav{
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 100vhpx;
+  left: 0;
+  width: 90px;
+  /* width: 280px; */
+  background: rgba(0, 0, 0, 0.767);
+  overflow: hidden;
+  transition: 1s;
+}
+nav:hover{
+  width: 280px;
+  transition: 1s;
+}
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+  padding-bottom: 3rem;
+}
+
+.logo img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+a{
+  position: relative;
+  width: 280px;
+  font-size: 14px;
+  color: rgb(85, 83, 83);
+  display: table;
+  padding: 10px;
+}
+nav .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.nav-item{
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+a:hover{
+  background: #eee;
+}
+a:hover i{
+  color: #34AF6D;
+  transition: 0.5s;
+}
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+.container{
+  display: flex;
+}
+
+/* MAin Section */
+.main{
+  position: relative;
+  padding: 20px;
+  width: 100%;
+}
+.main-top{
+  display: flex;
+  width: 100%;
+}
+.main-top i{
+  position: absolute;
+  right: 0;
+  margin: 10px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+.main .users{
+  display: flex;
+  width: 100%;
+}
+.users .card{
+  width: 25%;
+  margin: 10px;
+  background: rgba(0, 0, 0, 0.717);
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.users .card img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.users .card h4{
+  text-transform: uppercase;
+  color: white;
+}
+.users .card p{
+  font-size: 12px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.users table{
+  margin:  auto;
+}
+.users .per span{
+  padding: 5px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+}
+.users td{
+  font-size: 14px;
+  padding-right: 15px;
+}
+.users .card button{
+  width: 100%;
+  margin-top: 8px;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #2bff00;
+}
+.users .card button:hover{
+  background: #4AD489;
+  color: #fff;
+  transition: 0.5s;
+}
+
+/*Attendance List serction  */
+.attendance{
+  margin-top: 20px;
+  text-transform: capitalize;
+}
+.attendance-list{
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: rgba(47, 255, 0, 0.795);
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.table{
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 15px;
+  min-width: 100%;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+}
+table thead tr{
+  color: #fff;
+  background: #34AF6D;
+  text-align: left;
+  font-weight: bold;
+}
+.table th,
+.table td{
+  padding: 12px 15px;
+}
+.table tbody tr{
+  border-bottom: 1px solid #ddd;
+}
+.table tbody tr:nth-of-type(odd){
+  background: #f3f3f3;
+}
+.table tbody tr.active{
+  font-weight: bold;
+  color: #4AD489;
+}
+.table tbody tr:last-of-type{
+  border-bottom: 2px solid #4AD489;
+}
+.table button{
+  padding: 6px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #4AD489;
+}
+.table button:hover{
+  background: #4AD489;
+  color: #fff;
+  transition: 0.5rem;
+}
+</style>  <!-- Font Awesome Cdn Link -->
+
+
+
+    <section class="main">
+      <div class="main-top">
+        <h1>Deposit</h1>
+        <i class="fas fa-user-cog"></i>
+      </div>
+      <div class="users">
+        <div class="card">
+          <img src="img1.jpg">
+          <h4>FREE </h4>
+          <div class="per">
+            <table>
+              <tr>
+                <td><span>ያለገደብ</span></td>
+              </tr>
+              <tr>
+                
+              </tr>
+            </table>
+          </div>
+          <button ></button>
+        </div>
+        <div class="card">
+          <img src="img1.jpg">
+          <h4>በቀን የሚያወጣው 400 ብር </h4>
+          <div class="per">
+            <table>
+              <tr>
+                <td><span>የሚቆየው ለ 30 ቀን</span></td>
+               
+            </table>
+          </div>
+          <button> ክፍያ 500 ብር </button>
+        </div>
+        <div class="card">
+          <img src="img1.jpg">
+          <h4>በቀን የሚያወጣው 700 ብር </h4>
+          <div class="per">
+            <table>
+              <tr>
+                <td><span>የሚቆየው ለ 30 ቀን</span></td>
+               
+              </tr>
+            </table>
+          </div>
+          <button> ክፍያ 1000 ብር</button>
+        </div>
+        <div class="card">
+          <img src="img1.jpg">
+          <h4>በቀን የሚያወጣው 1300 ብር </h4>
+          
+          <div class="per">
+            <table>
+              <tr>
+                <td><span>የሚቆየው ለ 30 ቀን</span></td>
+               
+              </tr>
+            </table>
+          </div>
+          <button>ክፍያ 1500 ብር</button>
+        </div>
+      </div>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <title>iimp7 mining deposite</title>
+      <style>
+      
+      *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", sans-serif;
+      }
+      body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background: rgb(0, 8, 255);
+      }
+      .container{
+          width: 100%;
+          display: flex;
+          max-width: 850px;
+          background: linear-gradient(87deg, #02147cd9 0, #0554ad 100%) !important;
+          border-radius: 15px;
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+      .login{
+          width: 400px;
+      }
+      form{
+          width: 250px;
+          margin: 60px auto;
+      }
+      h1{
+          margin: 20px;
+          text-align: center;
+          font-weight: bolder;
+          text-transform: uppercase;
+      }
+      
+      p{
+          text-align: center;
+          margin: 10px;
+      }
+      hr{
+          border-top: 2px solid tomato;
+      }
+      
+      img{
+          width: 500px;
+          height: 100%;
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+      }
+      
+      form label{
+          display: block;
+          font-size: 16px;
+          font-weight: 600;
+          padding: 5px;
+          color: white;
+      }
+      input{
+          width: 100%;
+          margin: 2px;
+          border: none;
+          outline: none;
+          padding: 8px;
+          border-radius: 5px;
+          border: 1px solid gray;
+      }
+      button{
+          border: none;
+          outline: none;
+          padding: 8px;
+          width: 252px;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          margin-top: 20px;
+          border-radius: 5px;
+          background: tomato;
+      }
+      button:hover{
+          background: rgb(0, 17, 255);
+      }
+      p{
+          margin: 20px;
+      }
+      a{
+          color: black;
+          text-decoration: none;
+      }
+      
+      </style>
+        <section  id="login"> 
+      </head>
+      <body>
+        <center>  
+          <div class="container">
+              <div class="login">
+                  <form>
+                      <h1>Deposit</h1>
+                      <hr>
+                      <p>Explore the World!</p>
+                      <label>መግዛት የፈለጉትን የገንዘብ መጠን በቁጥር ይፃፉ</label>
+                      <input type="number" placeholder="0000" required="number">
+                      <label>የካርድ ቁጥር</label>
+                      <input type="password" placeholder="244646545455"  required="number">
+                      <button>Submit</button>
+                      <p>
+                      </p>
+                  </form>
+                  
+
+              </div>
+<img src="m.jpg" >
+             
+              </div>
+              
+
+          </div>
+      
+      </body>
+      </html>
+    </section>
+    </center>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
