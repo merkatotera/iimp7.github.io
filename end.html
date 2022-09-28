@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
     <link rel="icon" type="image/png" sizes="192x192"  href="img1.jpg">
@@ -177,7 +179,7 @@ border-width: 7px;
     <i class="fa fa-hand-holding-usd"></i> ገንዘብ ለማውጣት
 </a>   
 
-<a class="btn btn-warning btn-block" href="#ContactModal" data-toggle="modal" data-target="#ContactModal">
+<a class="btn btn-warning btn-block" href="#referralModal" data-toggle="modal" data-target="#referralModal">
     <i class="fa fa-hand-holding-usd"></i> ለሰው ለማጋራት
 
 
@@ -195,8 +197,8 @@ color: rgb(255, 255, 255);
 }
 </style>
    
-<center>  <form action="depo.html ">
-    <button  >ፍጥነት ለመጨመር </button>
+<center>  <form action="depo.html">
+    <button>ፍጥነት ለመጨመር </button>
     <style>
     button {
         color: rgb(255, 255, 255);
@@ -340,8 +342,34 @@ border-color: red; }
                                 <div class="row">
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0"> ቀሪ ሂሳብ</h5>
-                                        <span  class="h2 font-weight-bold mb-0"><span id="miningBalance">100.00000000 
-                                        </span>   ብር </span>
+                                        <span  class="h2 font-weight-bold mb-0"><span id="miningBalance">
+        <script> 
+                                                var countDownDate = localStorage.getItem('startDate'); 
+                                                if (countDownDate) { 
+                                                    countDownDate = new Date(countDownDate); 
+                                                } else { 
+                                                    countDownDate = new Date(); 
+                                                    localStorage.setItem('startDate', countDownDate); 
+                                                } 
+                                                // Update the count down every 1 second 
+                                                var x = setInterval(function() { 
+                                                 
+                                                    // Get todays date and time 
+                                                    var now = new Date().getTime(); 
+                                                 
+                                                    // Find the distance between now an the count down date 
+                                                    var distance = now - countDownDate.getTime(); 
+                                                 
+                                                    // Time calculations for days, hours, minutes and seconds 
+                                                    var minutes = Math.floor((distance % (1000 * 60000 * 60000)) / (1000 * 60));  
+                                                    var seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+                                                 
+                                                    // Output the result in an element with id="demo" 
+                                                    document.getElementById("demo").innerHTML =    + minutes + " ." + seconds +  " ብር  ";
+                                                }, 1000); ብር
+                                                </script> 
+                                                <p id="demo"></p> 
+                                        </span>    </span>
                                     </div>
                                 </div>
                                     <div wire:id="3S9mrp8s8ywjzVVyMVGO" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;3S9mrp8s8ywjzVVyMVGO&quot;,&quot;name&quot;:&quot;reinvest&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;account&quot;,&quot;method&quot;:&quot;GET&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;b886cce3&quot;,&quot;data&quot;:{&quot;  amount&quot;:null,&quot;balance&quot;:0.06762887800925634,&quot;total_hashpower&quot;:0,&quot;error_message&quot;:null,&quot;min_amount&quot;:&quot;0.00010000&quot;},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;79a85772db3296a065523f5f2e4e0899764b5848b869b0d6cb8c8af1f169bcbb&quot;}}">
@@ -622,51 +650,15 @@ border-color: red; }
 <script src="https://tronminegame.com/assets/themes/dashboard/default/js/argon-dashboard.js"></script>
 <script src="https://tronminegame.com/assets/themes/dashboard/default/js/custom.js"></script>
 
-    <!--Cookie Consent-->
-    <script src="" data-cfasync="false"></script>
-    <script>
-        window.cookieconsent.initialise({
-            "palette": {
-                "popup": {
-                    "background": "#252E39",
-                    "text": "#FFFFFF"
-                },
-                "button": {
-                                        "background": "#14A7D0",
-                                        "text": "#FFFFFF"
-                }
-            },
-            "position": "bottom",
-                        "static": false,
-                                            "theme": "classic"
-                    });
-    </script>
-<script src="/livewire/livewire.js?id=5cdaa3ec393c09829366" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'XK42SQKZUOTMbZXRfEKoGs1u7OO61gqQe6yVePgQ';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function(e) {
-            let currentRate = 1;
-            let balance = document.getElementById('miningBalance');
-            const fiatBalance = document.getElementById('fiatBalance');
-            const dailyProfit = document.getElementById('dailyProfit');
-            let daily_profit = (dailyProfit.innerText);
-           let  balance_value = 100.0 ;
-            let per_second  = (daily_profit / 1000).toFixed(15);
-            setInterval(function(){
-                balance_value = parseFloat(balance_value)+parseFloat(per_second);
-                balance.innerText = parseFloat(balance_value).toFixed(15);
-                fiatBalance.innerText = (balance.innerText * currentRate).toFixed(5);
-            }, 1000);
-        });
-    </script>
-  
+
+
+
+
 <footer>
 
     iimp7 miner, 2022. All rights Reserved
 </footer>
  
-
-
-
 
 
 
@@ -761,110 +753,118 @@ border-color: red; }
 
 
 <!-- Livewire Component wire-end:GIc0AELpmlrc5hlOcJTn --><div wire:id="myQigq032DwMNiWurT4j" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;myQigq032DwMNiWurT4j&quot;,&quot;name&quot;:&quot;isru&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;account&quot;,&quot;method&quot;:&quot;GET&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;b3f2b6fb&quot;,&quot;data&quot;:{&quot;amount&quot;:null,&quot;withdrawal_error_message&quot;:null,&quot;min_withdraw&quot;:&quot;0.10000000&quot;,&quot;max_withdraw&quot;:0.06762887800925634,&quot;final_amount&quot;:0},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;33baec34b5c2bb34bffa72bef187b29de6cc899703971443e800c366302bda7e&quot;}}">
-    <div class="modal fade" wire:ignore.self id="ContactModal" tabindex="-1" aria-labelledby="ContactModal" aria-hidden="true">
+    <div class="modal fade" wire:ignore.self id="referralModal" tabindex="-1" aria-labelledby="referralModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ContactModal"><i class="fa fa-money-bill"></i>  
+                    <h5 class="modal-title" id="referralModal"><i class="fa fa-money-bill"></i>  
                     
                     
                     
                     
                     
-              
+     
+
+
+
+
+
+      
     <!-- End Navbar -->
         <!-- Header -->
-          <style>
+        <style>
      
-     .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: rgba(0, 0, 0, 0.863);
-    background-clip: border-box;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 0.375rem;
-     }
-
-
-
-     p {
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.7;
-color: white;
-
-}
-
-        </style>
-        <div class="header bg-gradient-primary pb-8"></div>
-
-        <div class="container-fluid mt--7">
-    
-                <div class="row mt-5">
-            <div class="col-xl-12 mb-5 mb-xl-0">
-                <div class="card shadow">
-                    <div class="card-header border-8">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h3 class="mb-0">Referrals Tools</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p>You can earn coins by sharing referral link to your friends. For each referral deposit, you will receive
-                            1% of the deposit amount.</p>
-                        <div class="form-group">
-                            <label for="link">Referral Link</label>
-                            <div class="input-group input-group-merge">
-                                <div class="input-group-prepend" title="Copy to Clipboard" onclick="copy_ref_link();">
-                                    <span class="input-group-text"><i class="fa fa-copy"></i></span>
-                                </div>
-                                <input type="link" name="link" id="link" class="form-control text-center" readonly value="https://www.iimp7.ml/r/267737635">
-                                <div class="input-group-append">
-                                    <span class="input-group-text"><i class="fa fa-retweet"></i>&nbsp;<span class="leading">0 hits</span></span>
-                                </div>
-                            </div>
-                            <small class="form-text text-success" style="display: none" id="reflink_copied">Copied to Clipboard</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-xl-12 mb-5 mb-xl-0">
-                <div class="card shadow">
-                    <div class="card-header border-0">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h3 class="mb-0">Referrals List</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped text-center">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th scope="col">Wallet</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                                                        <tr><td class="text-center" colspan="3">No referrals found!</td></tr>
-                                                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                <center>      <button type="button" class="btn btn-danger" data-dismiss="modal" wire:loading.attr="disabled" wire:target="withdrawal">Cancel</button> </center>
-                </div>
-            </div>
-        </div>
-    
-
+            .card {
+           position: relative;
+           display: flex;
+           flex-direction: column;
+           min-width: 0;
+           word-wrap: break-word;
+           background-color: rgba(0, 0, 0, 0.863);
+           background-clip: border-box;
+           border: 1px solid rgb(0, 0, 0);
+           border-radius: 0.375rem;
+            }
+       
+       
+       
+            p {
+           font-size: 1rem;
+           font-weight: 300;
+           line-height: 1.7;
+       color: white;
+       
+       }
+       
+               </style>
+               <div class="header bg-gradient-primary pb-8"></div>
+       
+               <div class="container-fluid mt--7">
+           
+                       <div class="row mt-5">
+                   <div class="col-xl-12 mb-5 mb-xl-0">
+                       <div class="card shadow">
+                           <div class="card-header border-8">
+                               <div class="row align-items-center">
+                                   <div class="col">
+                                       <h3 class="mb-0">Referrals Tools</h3>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="card-body">
+                               <p>You can earn coins by sharing referral link to your friends. For each referral deposit, you will receive
+                                   1% of the deposit amount.</p>
+                               <div class="form-group">
+                                   <label for="link">Referral Link</label>
+                                   <div class="input-group input-group-merge">
+                                       <div class="input-group-prepend" title="Copy to Clipboard" onclick="copy_ref_link();">
+                                           <span class="input-group-text"><i class="fa fa-copy"></i></span>
+                                       </div>
+                                       <input type="link" name="link" id="link" class="form-control text-center" readonly value="https://www.iimp7.ml/r/267737635">
+                                       <div class="input-group-append">
+                                           <span class="input-group-text"><i class="fa fa-retweet"></i>&nbsp;<span class="leading">0 hits</span></span>
+                                       </div>
+                                   </div>
+                                   <small class="form-text text-success" style="display: none" id="reflink_copied">Copied to Clipboard</small>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="row mt-3">
+                   <div class="col-xl-12 mb-5 mb-xl-0">
+                       <div class="card shadow">
+                           <div class="card-header border-0">
+                               <div class="row align-items-center">
+                                   <div class="col">
+                                       <h3 class="mb-0">Referrals List</h3>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="card-body">
+                               <div class="table-responsive">
+                                   <table class="table table-striped text-center">
+                                       <thead class="thead-light">
+                                           <tr>
+                                               <th scope="col">Wallet</th>
+                                               <th scope="col">Status</th>
+                                               <th scope="col">Date</th>
+                                           </tr>
+                                       </thead>
+                                       <tbody>
+                                                                               <tr><td class="text-center" colspan="3">No referrals found!</td></tr>
+                                                                       </tbody>
+                                   </table>
+                               </div>
+                           </div>
+                       <center>      <button type="button" class="btn btn-danger" data-dismiss="modal" wire:loading.attr="disabled" wire:target="withdrawal">Cancel</button> </center>
+                       </div>
+                   </div>
+               </div>
+           
+       
+       
+       
 
 
 
@@ -897,6 +897,61 @@ color: white;
 
 
 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
