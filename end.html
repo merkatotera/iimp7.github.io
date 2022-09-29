@@ -547,6 +547,7 @@ border-color: red; }
                  <style>
                     .crctrsc {
                         color: #ffffff;
+                       font-size: 30px;
                     }
                     .col-6 {
                         color: white;
@@ -564,12 +565,15 @@ border-color: red; }
 
                 <div class="modal-body">
                                                                 <div class="row text-sm">
-                            <div class="col-6 text-left"><strong>Min:</strong> <a href="#withdrawalMin" wire:click="setMin"><b class="cflf">10,000 ብር</b> </a></div>
-                            <div class="col-6 text-right"><strong>:</strong> <a href="#withdrawalMin" wire:click="setMax"></a></div>
-                        </div>
-                        <div class="input-group">
-                            <input  type="number" wire:model=" " class="form-control " placeholder=" Phone number" wire:change="calcFees">
-                          <div class="input-group-append">
+                           
+                           
+                                                                    <div class="col-6 text-left"><strong>Min:</strong> <a href="#withdrawalMin" wire:click="setMin"><b class="cflf">10,000 ብር</b> </a></div>
+                        </div>                                     <div class="col-6 text-right"><strong> </strong> <a href="#withdrawalMin" wire:click="setMax"></a></div>
+
+
+
+
+                            <div class="input-group-append">
                             <div class="input-group-text"></div>
 
 
@@ -577,9 +581,13 @@ border-color: red; }
                                                     </div>
                                                                                     </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" wire:loading.attr="disabled" wire:target="withdrawal">Cancel</button>
-                                        <button type="submit"  class="btn btn-success" id="startBtn" wire:click="withdrawal" wire:loading.remove><i class="fa fa-hand-holding-usd"></i> Confirm Request</button>
-                    <button  type="button" class="btn btn-success disabled"  wire:loading wire:target  ="withdrawal"><i class="fa fa-spinner fa-spin"></i> Processing</button>
+                    <center><button class="dfghh">cancel</button></center>
+                    <style>
+                        .dfghh{
+                            background-color: #0015ff;
+                            color: white;
+                        }
+                    </style>
                                     </div>
             </div>
         </div>
