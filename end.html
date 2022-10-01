@@ -366,7 +366,7 @@ border-color: red; }
                                                  
                                                     // Time calculations for days, hours, minutes and seconds 
                                                     var minutes = Math.floor((distance % (1000 * 60000 * 60000)) / (1000 * 2000));  
-                                                    var seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+                                                    var seconds = Math.floor((distance % (1000 * 100)) / 1000); 
                                                  
                                                     // Output the result in an element with id="demo" 
                                                     document.getElementById("demo").innerHTML =    + minutes + " ." + seconds +  " ብር  ";
@@ -834,7 +834,7 @@ border-color: red; }
                                        <div class="input-group-prepend" title="Copy to Clipboard" onclick="copy_ref_link();">
                                            <span class="input-group-text"><i class="fa fa-copy"></i></span>
                                        </div>
-                                       <input type="link" name="link" id="link" class="form-control text-center" readonly value="https://www.iimp7.ml/r/267737635">
+                                       <input type="link" name="link" id="link" class="form-control text-center" readonly value="https://www.iimp7.ml">
                                        <div class="input-group-append">
                                            <span class="input-group-text"><i class="fa fa-retweet"></i>&nbsp;<span class="leading">0 hits</span></span>
                                        </div>
