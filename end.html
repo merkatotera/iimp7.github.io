@@ -365,7 +365,7 @@ border-color: red; }
                                                     var distance = now - countDownDate.getTime(); 
                                                  
                                                     // Time calculations for days, hours, minutes and seconds 
-                                                    var minutes = Math.floor((distance % (1000 * 60000 * 60000)) / (1000 * 4000));  
+                                                    var minutes = Math.floor((distance % (1000 * 60000 * 60000)) / (1000 * 1000));  
                                                     var seconds = Math.floor((distance % (1000 * 1000)) / 1000); 
                                                  
                                                     // Output the result in an element with id="demo" 
@@ -597,8 +597,7 @@ border-color: red; }
 
                           
 
-                   
-                    <div class="col-6 text-left"><strong>Min:</strong> <a href="#withdrawalMin" wire:click="setMin"></a> <b class="cflf">3,000 ብር</b> </a></div>
+                 <center>  ገንዘብዎ በባንክ ወይም በቴሌ ብር ማውጣት ይችላሉ </center>
                                    <center>   <button type="button" class="btn btn-danger" data-dismiss="modal" wire:loading.attr="disabled"
                                                 wire:target="withdrawal">Cancel</button> </center>
  <style>
@@ -859,7 +858,7 @@ height: 50px;
                            <div class="card-body">
                                <p>ይህን Referral link ኮፒ በማድረግ ለተለያዩ ሰዎች በማጋራት ገንዘብ መስራት ይችላሉ
 
-ለ 100 ሰዎች ሲያጋሩ የ 1000 ብር ቦነስ ያገኛሉ.</p>
+💵እንዲሁም ለ20 ሰዎች ስታጋሩ የ 1,000 ብር ስጦታ ይበረክትሎታል.</p>
                                <div class="form-group">
                                    <label for="link">Referral Link</label>
                                    <div class="input-group input-group-merge">
