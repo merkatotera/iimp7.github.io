@@ -445,7 +445,7 @@ border-color: red; }
 <div class="row">
     <div class="col">
         <h5 class="card-title text-uppercase text-muted mb-0">ተጠቃሚዎች</h5>
-        <span class="h2 font-weight-bold mb-0">278,680</span>
+        <span class="h2 font-weight-bold mb-0">+200,000</span>
     </div>
     <div class="col-auto">
         <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -857,20 +857,58 @@ height: 50px;
                                </div>
                            </div>
                            <div class="card-body">
-                               <p>You can earn coins by sharing referral link to your friends. For each referral deposit, you will receive
-                                   1% of the deposit amount.</p>
+                               <p>ይህን Referral link ኮፒ በማድረግ ለተለያዩ ሰዎች በማጋራት ገንዘብ መስራት ይችላሉ
+
+ለ 100 ሰዎች ሲያጋሩ የ 1000 ብር ቦነስ ያገኛሉ.</p>
                                <div class="form-group">
                                    <label for="link">Referral Link</label>
                                    <div class="input-group input-group-merge">
-                                       <div class="input-group-prepend" title="Copy to Clipboard" onclick="copy_ref_link();">
+                                      <div class="input-group-prepend" title="Copy to Clipboard" onclick="copy_ref_link();"> 
                                            <span class="input-group-text"><i class="fa fa-copy"></i></span>
                                        </div>
-                                       <input type="link" name="link" id="link" class="form-control text-center" readonly value="https://www.iimp7.ml/r/267737635">
+                                       <input type="link" name="link" id="link" class="form-control text-center" readonly value="https://www.iimp7.ml/login.html">
                                        <div class="input-group-append">
                                            <span class="input-group-text"><i class="fa fa-retweet"></i>&nbsp;<span class="leading">0 hits</span></span>
                                        </div>
                                    </div>
-                                   <small class="form-text text-success" style="display: none" id="reflink_copied">Copied to Clipboard</small>
+
+
+
+
+
+
+
+
+
+
+</script>
+<script src="/livewire/livewire.js?id=5cdaa3ec393c09829366" data-turbo-eval="false"
+    data-turbolinks-eval="false"></script>
+<script data-turbo-eval="false"
+    data-turbolinks-eval="false">window.livewire = new Livewire(); window.Livewire = window.livewire; window.livewire_app_url = ''; window.livewire_token = 'InA5BVk549QvnLhqGl8jgmUbOKJ1rFL43NQtAp2A'; window.deferLoadingAlpine = function (callback) { window.addEventListener('livewire:load', function () { callback(); }); }; let started = false; window.addEventListener('alpine:initializing', function () { if (!started) { window.livewire.start(); started = true; } }); document.addEventListener("DOMContentLoaded", function () { if (!started) { window.livewire.start(); started = true; } });</script>
+<script>
+    function copy_ref_link() {
+        document.getElementById('link').select();
+        document.execCommand('copy');
+        document.getElementById('reflink_copied').style.display = 'block';
+        const copied = $('#reflink_copied');
+        setTimeout(function () {
+            copied.fadeOut(1500);
+        }, 3000);
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+                                 <small class="form-text text-success" style="display: none" id="reflink_copied">Copied to Clipboard</small> 
                                </div>
                            </div>
                        </div>
